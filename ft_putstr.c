@@ -1,15 +1,19 @@
 # include "libftprintf.h"
 
-void	ft_putstrs(t_struct *s, char *c)
+int		ft_putchar(char c)
 {
-	int		i;
+	write (1, &c, 1);
+	return (0);
+}
+void	ft_putstr(t_struct *s)
+{
+	char 	*str;
 
-	i = 0;
-	
-	c = va_arg(s->argv, char*);
-	while (c[i] != '\0')
-	{
-		write (1, &c, 1);
-		i++;
-	}
+	str = va_arg(s->argv, char*);
+	while (*str != '\0')
+		{
+			ft_putchar(*str);
+			str++;
+			s->ret++;
+		}
 }

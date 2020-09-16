@@ -38,11 +38,11 @@ typedef	struct s_struct
 
 int		ft_printf(const char *, ...);
 void	ft_handle(t_struct *s, const char *str);
-void	ft_putstr(t_struct *s, char *c);
+void	ft_putstr(t_struct *s);
 void	ft_put_c(t_struct *s);
 void	ft_put_str(t_struct *s);
 void	ft_put_dig(t_struct *s);
-char	ft_putnbrbase(long long n, char *base, t_struct *ss);
+char	ft_putnbrbase(long long n, char *base, t_struct *s);
 void	ft_iniflags(t_struct *s);
 int		ft_flag_recon(t_struct *s, const char *str);
 
