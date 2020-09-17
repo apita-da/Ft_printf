@@ -3,9 +3,9 @@
 int	ft_flag_recon(t_struct *s, const char *str)
 {
 	s->i++;
-	if (str[s->i] == 0)
+	if (str[s->i] == '0')
 	{
-		write(1, "0", 1);
+		s->flag.zero = 1;
 		s->i++;
 	}
 	if (str[s->i] == '-')

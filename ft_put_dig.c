@@ -30,10 +30,18 @@ void    ft_put_dig(t_struct *s)
     }
     else
     {
-        while (--s->flag.width)
+        while (--s->flag.width && s->flag.width > 0)
            {
-			   write(1, " ", 1);
-				s->ret++;
+               if (s->flag.zero == 1)
+                {
+                    write(1, "0", 1);
+                    s->ret++;
+                }
+                else
+                {
+                   write(1, " ", 1);
+                   s->ret++;
+                }
 			}
         ft_putnbrbase(c, "0123456789", s);	
     }

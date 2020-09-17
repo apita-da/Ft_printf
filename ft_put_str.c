@@ -2,9 +2,8 @@
 
 void	ft_put_str(t_struct *s)
 {
-	// char	*str;
 	
-	// str = va_arg(s->argv, char*);
+	
 	
 	ft_putstr(s);
 	// if(ft_strlen(c) <= (size_t)s->flag.width)
