@@ -3,10 +3,15 @@
 int		main(void)
 {
 	int ret, ret2;
-    ret = ft_printf("%5.5s", "amalia");
+    ret = ft_printf("%10.2s", "amalia");
     printf("\t ret mio = %i\n", ret);
-    ret2 = printf("%5.5s", "amalia");
+    ret2 = printf("%10.2s", "amalia");
     printf("\t ret bueno = %i\n", ret2);
+	 
+	/*ret = ft_printf("%015i", 123456);
+    printf("\t ret mio = %i\n", ret);
+    ret2 = printf("%015i", 123456);
+    printf("\t ret bueno = %i\n", ret2);*/
 	//printf("prueba:%0*.5f\n", 10, .123454);
 	//printf("prueba:%%\n", 10, .123454);
 	//ft_printf("tu edad es:%%\n");

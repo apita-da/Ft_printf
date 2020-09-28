@@ -4,7 +4,6 @@ SRCS = ft_printf.c ft_handle.c\
 		ft_strlenprint.c
 		
 
-LIBFT = libft/Libft.a
 CFLAGS = -Wall -Wextra -Werror
 install: 
 		gcc $(CFLAGS) main1.c $(SRCS) $(LIBFT)
