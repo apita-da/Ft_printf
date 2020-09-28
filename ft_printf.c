@@ -7,6 +7,8 @@ int		ft_printf(const char *str, ...)
 	va_start(s.argv, str);
 	s.i = 0;
 	s.ret = 0;
+	if (str == NULL)
+		str = "(null)";
 	while (str[s.i] != '\0')
 	{
 		if (str[s.i] == '%')
