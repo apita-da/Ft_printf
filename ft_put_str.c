@@ -8,10 +8,10 @@ void	ft_put_str(t_struct *s)
 
 	str = va_arg(s->argv, const char *);
 	prec = s->flag.prec;
-	len = ft_strlenprint(str, prec);
+	len = ft_strlenprint(str, prec, s);
+	
 	if (s->flag.prec)
 	{
-		
 		s->flag.width = 1 + s->flag.width - s->flag.prec;
 		if (s->flag.minus == 1)
 		{
@@ -32,7 +32,6 @@ void	ft_put_str(t_struct *s)
 			ft_putstr(str, s);						
 		}
 	}
-	
 	else
 	{
 		s->flag.width = 1 + s->flag.width - len;
@@ -41,7 +40,7 @@ void	ft_put_str(t_struct *s)
 			ft_putstr(str, s);
 			while(--s->flag.width)
 			{
-				write(1, "a", 1);
+				write(1, " ", 1);
 				s->ret++;
 			}
 		}
