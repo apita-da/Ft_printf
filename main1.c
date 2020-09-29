@@ -3,9 +3,9 @@
 int		main(void)
 {
 	int ret, ret2;
-    ret = ft_printf("%-15.8i", 123456);
+    ret = ft_printf("%1.1i", 123456);
     printf("\tret mio = %i\n", ret);
-    ret2 = printf("%-15.8i", 123456);
+    ret2 = printf("%1.1i", 123456);
     printf("\tret bueno = %i\n", ret2);
 	 /*ret = ft_printf("%015i", 123456);
     printf("\t ret mio = %i\n", ret);

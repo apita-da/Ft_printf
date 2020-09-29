@@ -40,11 +40,15 @@ int		ft_printf(const char *, ...);
 void	ft_handle(t_struct *s, const char *str);
 void	ft_putstr(const char *str , t_struct *s);
 void	ft_put_c(t_struct *s);
+void	ft_put_str_prec(t_struct *s);
 void	ft_put_str(t_struct *s);
+void	ft_str_minus(const char * str, t_struct *s);
+void	ft_str(const char * str, t_struct *s);
 void	ft_put_dig(t_struct *s);
 char	ft_putnbrbase(long long n, char *base, t_struct *s);
 void	ft_iniflags(t_struct *s);
 int		ft_flag_recon(t_struct *s, const char *str);
-int		ft_strlenprint(const char *str);
-
+int		ft_count_num(long int num);
+int		ft_strlen(const char *str);
+void	ft_putchar(char c, t_struct *s);
 # endif

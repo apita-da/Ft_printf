@@ -1,8 +1,15 @@
 # include "libftprintf.h"
 
-void		ft_putchar(char c)
+int		ft_strlen(const char *str)
 {
-	write (1, &c, 1);
+	unsigned int	cont;
+	
+	cont = 0;
+	while (str[cont] != '\0')
+	{
+		cont++;
+	}
+	return (cont);
 }
 void	ft_putstr(const char *str, t_struct *s)
 {
@@ -13,17 +20,15 @@ void	ft_putstr(const char *str, t_struct *s)
 	{
 		while (str[++i] != '\0' && s->flag.prec)
 		{
-			ft_putchar(str[i]);
+			ft_putchar(str[i], s);
 			s->flag.prec--;
-			s->ret++;
 		}
 	}
 	else
 	{
 		while (str[++i] != '\0')
 		{
-			ft_putchar(str[i]);
-			s->ret++;
+			ft_putchar(str[i], s);
 		}
 	}
 }

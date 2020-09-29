@@ -1,16 +1,5 @@
 # include "libftprintf.h"
 
-size_t		ft_strlen(const char *str)
-{
-	unsigned int cont;
-
-	cont = 0;
-	while (str[cont] != '\0')
-	{
-		cont++;
-	}
-	return (cont);
-}
 char	ft_putnbrbase(long long n, char *base, t_struct *s)
 {
 	if (n < 0)
@@ -24,4 +13,19 @@ char	ft_putnbrbase(long long n, char *base, t_struct *s)
 	write(1, &base[n % ft_strlen(base)], 1);
 	s->ret++;
 	return (0);
+}
+
+int		ft_count_num(long int num)
+{
+    int i;
+    
+    i = 0;
+	if (num == 0)
+		i = 1;
+    while (num != 0)
+    {
+        num = num / 10;
+        i++;
+    }
+    return (i);
 }
