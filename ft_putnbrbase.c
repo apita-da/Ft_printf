@@ -17,6 +17,7 @@ char	ft_putnbrbase(long long n, char *base, t_struct *s)
 	{
 		n *= -1;
 		write(1, "-", 1);
+		s->ret++;
 	}
 	if (n > (long long)ft_strlen(base))
 		ft_putnbrbase(n / ft_strlen(base), base, s);

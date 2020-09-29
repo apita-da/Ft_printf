@@ -45,6 +45,6 @@ void	ft_put_dig(t_struct *s);
 char	ft_putnbrbase(long long n, char *base, t_struct *s);
 void	ft_iniflags(t_struct *s);
 int		ft_flag_recon(t_struct *s, const char *str);
-int		ft_strlenprint(const char *str, int prec, t_struct *s);
+int		ft_strlenprint(const char *str);
 
 # endif
