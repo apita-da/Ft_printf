@@ -29,3 +29,18 @@ int		ft_count_num(long int num)
     }
     return (i);
 }
+
+int		ft_count_hex(long int num)
+{
+    int i;
+    
+    i = 0;
+	if (num == 0)
+		i = 1;
+    while (num > 0)
+    {
+        num = num / 16;
+        i++;
+    }
+    return (i);
+}

@@ -35,20 +35,42 @@ typedef	struct s_struct
 	va_list	argv;
 	t_flags	flag;
 }				t_struct;
-
+//generales
 int		ft_printf(const char *, ...);
-void	ft_handle(t_struct *s, const char *str);
-void	ft_putstr(const char *str , t_struct *s);
-void	ft_put_c(t_struct *s);
-void	ft_put_str_prec(t_struct *s);
-void	ft_put_str(t_struct *s);
-void	ft_str_minus(const char * str, t_struct *s);
-void	ft_str(const char * str, t_struct *s);
-void	ft_put_dig(t_struct *s);
-char	ft_putnbrbase(long long n, char *base, t_struct *s);
 void	ft_iniflags(t_struct *s);
 int		ft_flag_recon(t_struct *s, const char *str);
-int		ft_count_num(long int num);
-int		ft_strlen(const char *str);
+void	ft_handle(t_struct *s, const char *str);
+//handle str
+void	ft_put_c(t_struct *s);
+void	ft_putstr(const char *str , t_struct *s);
+void	ft_put_str(t_struct *s);
+void	ft_put_str_prec(t_struct *s);
+void	ft_str_minus(const char * str, t_struct *s);
+void	ft_str(const char * str, t_struct *s);
+//handle d & i
+void	ft_put_dig(t_struct *s);
+void	ft_put_dig_minus(t_struct *s);
+void	ft_put_prec(t_struct *s);
+void    ft_put_zero(t_struct *s);
+//handle u
+void	ft_put_dig_u(t_struct *s);
+void	ft_put_dig_minus_u(t_struct *s);
+void	ft_put_prec_u(t_struct *s);
+void    ft_put_zero_u(t_struct *s);
+//handle x
+void	ft_put_dig_x(t_struct *s);
+void	ft_put_dig_minus_x(t_struct *s);
+void	ft_put_prec_x(t_struct *s);
+void    ft_put_zero_x(t_struct *s);
+//handle X
+void	ft_put_dig_X(t_struct *s);
+void	ft_put_dig_minus_X(t_struct *s);
+void	ft_put_prec_X(t_struct *s);
+void    ft_put_zero_X(t_struct *s);
+//utiles generales
 void	ft_putchar(char c, t_struct *s);
+int		ft_strlen(const char *str);
+int		ft_count_num(long int num);
+int		ft_count_hex(long int num);
+char	ft_putnbrbase(long long n, char *base, t_struct *s);
 # endif

@@ -12,11 +12,11 @@ void	ft_put_str_prec(t_struct *s)
 	width = s->flag.width;
 	prec = s->flag.prec;
 	
-	width = width - (len > prec ? prec : len);//comprobar en mac
+	width = 1 + width - (len > prec ? prec : len);
 	if (s->flag.minus == 1)
 	{
 		ft_putstr(str, s);
-		while(width > 0)
+		while(--width > 0)
 			ft_putchar(' ', s);
 	}
 	else
