@@ -70,6 +70,12 @@ void	ft_put_dig_X(t_struct *s);
 void	ft_put_dig_minus_X(t_struct *s);
 void	ft_put_prec_X(t_struct *s);
 void    ft_put_zero_X(t_struct *s);
+//handle puntero
+void	ft_put_pointer(t_struct *s);
+void	ft_put_minus_p(t_struct *s);
+void	ft_put_width_p(t_struct *s);
+//porcentaje
+void	ft_put_perc(t_struct *s);
 //utiles generales
 void	ft_putchar(char c, t_struct *s);
 int		ft_strlen(const char *str);

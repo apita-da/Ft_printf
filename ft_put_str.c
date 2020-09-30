@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_str.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/30 17:40:40 by apita-da          #+#    #+#             */
+/*   Updated: 2020/09/30 17:40:40 by apita-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libftprintf.h"
 
 void	ft_put_str_prec(t_struct *s)
@@ -8,6 +20,8 @@ void	ft_put_str_prec(t_struct *s)
 	int				prec;
 
 	str = va_arg(s->argv, const char *);
+	if(str == NULL)
+		str = "(null)";
 	len = ft_strlen(str);
 	width = s->flag.width;
 	prec = s->flag.prec;
@@ -34,6 +48,8 @@ void	ft_put_str(t_struct *s)
 	int				width;
 
 	str = va_arg(s->argv, const char *);
+	if(str == NULL)
+		str = "(null)";
 	len = ft_strlen(str);
 	width = s->flag.width;
 

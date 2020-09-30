@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_dig_XX.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/30 17:40:11 by apita-da          #+#    #+#             */
+/*   Updated: 2020/09/30 22:01:08 by apita-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libftprintf.h"
 
 void    ft_put_dig_minus_X(t_struct *s)
@@ -6,7 +18,7 @@ void    ft_put_dig_minus_X(t_struct *s)
     int                     width;
     int                     len; //se puede quitar
 
-    c = va_arg(s->argv, unsigned long int);
+    c = (unsigned int)va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_hex(c);
     if (s->flag.prec <= len && width <= len)
@@ -32,7 +44,7 @@ void    ft_put_prec_X(t_struct *s)
     int         width;
     int         len; //se puede quitar
 
-    c = va_arg(s->argv, unsigned long int);
+    c = (unsigned int)va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_hex(c);
     if (s->flag.prec <= len && width <= len)
@@ -58,7 +70,7 @@ void    ft_put_zero_X(t_struct *s)
     int                     width;
     int         len; //se puede quitar
 
-    c = va_arg(s->argv, unsigned long int);
+    c = (unsigned int)va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_hex(c);
     width = 1 + width - len;
@@ -69,7 +81,7 @@ void    ft_put_zero_X(t_struct *s)
         else
             ft_putchar(' ', s);
     }
-    ft_putnbrbase(c, "0123456789ABCEDF", s);	
+    ft_putnbrbase(c, "0123456789ABCDEF", s);	
 }
 void    ft_put_dig_X(t_struct *s) //falta error con int null?
 {

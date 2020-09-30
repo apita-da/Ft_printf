@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/30 17:39:42 by apita-da          #+#    #+#             */
+/*   Updated: 2020/09/30 17:39:42 by apita-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libftprintf.h"
 
 int		ft_printf(const char *str, ...)
@@ -7,8 +19,6 @@ int		ft_printf(const char *str, ...)
 	va_start(s.argv, str);
 	s.i = 0;
 	s.ret = 0;
-	if (str == NULL)
-		str = "(null)";
 	while (str[s.i] != '\0')
 	{
 		if (str[s.i] == '%')

@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_dig_u.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/30 17:40:01 by apita-da          #+#    #+#             */
+/*   Updated: 2020/09/30 18:12:39 by apita-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libftprintf.h"
 
-void    ft_put_minus_u(t_struct *s)
+void    ft_put_dig_minus_u(t_struct *s)
 {
-    unsigned long int       c;
-    int                     width;
-    int                     len; //se puede quitar
+    unsigned int		c;
+    int					width;
+    int					len; 
 
-    c = va_arg(s->argv, unsigned long int);
+    c = va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_num(c);
     width = 1 + width - len;
@@ -15,7 +27,7 @@ void    ft_put_minus_u(t_struct *s)
         ft_putnbrbase(c, "0123456789", s);
     else
     {
-        //width = 1 + width - len;
+        width = 1 + width - len;
         while (s->flag.prec > len)
         {
             ft_putchar('0', s);
@@ -30,11 +42,11 @@ void    ft_put_minus_u(t_struct *s)
 
 void    ft_put_prec_u(t_struct *s)
 {
-    unsigned long int       c;
+    unsigned int       c;
     int                     width;
     int                     len; //se puede quitar
 
-    c = va_arg(s->argv, unsigned long int);
+    c = va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_num(c);
     if (s->flag.prec <= len && width <= len)
@@ -56,11 +68,11 @@ void    ft_put_prec_u(t_struct *s)
 
 void    ft_put_zero_u(t_struct *s)
 {
-    unsigned long int       c;
+    unsigned int	c;
     int                     width;
     int                     len; //se puede quitar
 
-    c = va_arg(s->argv, unsigned long int);
+    c = va_arg(s->argv, unsigned int);
     width = s->flag.width;
     len = ft_count_num(c);
     width = 1 + width - len;
@@ -77,9 +89,9 @@ void    ft_put_zero_u(t_struct *s)
 void    ft_put_dig_u(t_struct *s) //falta error con int null?
 {
     if (s->flag.minus == 1)
-        ft_put_dig_minus(s);
+        ft_put_dig_minus_u(s);
     else if (!s->flag.zero && s->flag.prec != 0)
-        ft_put_prec(s);
+        ft_put_prec_u(s);
     else
-        ft_put_zero(s);    
+        ft_put_zero_u(s);    
 }
