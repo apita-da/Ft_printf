@@ -39,6 +39,9 @@ typedef	struct s_struct
 int		ft_printf(const char *, ...);
 void	ft_iniflags(t_struct *s);
 int		ft_flag_recon(t_struct *s, const char *str);
+// int		ft_flag_min_zero(t_struct *s, const char *str);
+// int		ft_flag_width(t_struct *s, const char *str);
+// int		ft_flag_prec(t_struct *s, const char *str);
 void	ft_handle(t_struct *s, const char *str);
 //handle str
 void	ft_put_c(t_struct *s);
