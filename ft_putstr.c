@@ -37,10 +37,6 @@ void	ft_putstr(const char *str, t_struct *s)
 			s->flag.prec--;
 		}
 	}
-	else if(!s->flag.prec && s->flag.prec == 0)
-	{
-		return ;
-	}
 	else
 	{
 		while (str[++i] != '\0')
