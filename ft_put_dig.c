@@ -19,6 +19,8 @@ void    ft_put_dig_minus(t_struct *s)
     int         len;
 
     c = va_arg(s->argv, int);
+    if(c == NULL)
+		c = "(null)";
     width = s->flag.width;
     len = ft_count_num(c);
     if (s->flag.prec <= len && width <= len)
@@ -45,6 +47,8 @@ void    ft_put_prec(t_struct *s)
     int         len;
 
     c = va_arg(s->argv, int);
+    if(c == NULL)
+		c = "(null)";
     width = s->flag.width;
     len = ft_count_num(c);
     if (s->flag.prec <= len && width <= len)
@@ -71,6 +75,8 @@ void    ft_put_zero(t_struct *s)
     int         len; //se puede quitar
 
     c = va_arg(s->argv, int);
+    if(c == NULL)
+		c = "(null)";
     width = s->flag.width;
     len = ft_count_num(c);
     width = 1 + width - len;
