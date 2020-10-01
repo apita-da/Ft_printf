@@ -10,26 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c ft_handle.c\
+SRCS =	ft_printf.c ft_handle.c\
 		ft_put_c.c ft_put_str.c ft_putstr.c ft_put_dig.c\
 		ft_putnbrbase.c ft_iniflags.c ft_flag_recon.c\
 		ft_put_dig_u.c ft_put_dig_x.c ft_put_dig_XX.c\
 		ft_put_p.c ft_put_perc.c
 		
-OBJS = 	ft_printf.o\
-		ft_handle.o\
-		ft_put_c.o\
-		ft_put_str.o\
-		ft_putstr.o\
-		ft_put_dig.o\
-		ft_putnbrbase.o\
-		ft_iniflags.o\
-		ft_flag_recon.o\
-		ft_put_dig_u.o\
-		ft_put_dig_x.o\
-		ft_put_dig_XX.o\
-		ft_put_p.o\
-		ft_put_perc.o
+OBJS = $(SRCS:.c=.o)
 
 
 CFLAGS = -Wall -Wextra -Werror -g

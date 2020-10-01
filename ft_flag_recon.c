@@ -12,19 +12,13 @@
 
 #include "libftprintf.h"
 
-int	ft_flag_recon(t_struct *s, const char *str)
+void	ft_flag_recon(t_struct *s, const char *str)
 {
 	s->i++;
-	if (str[s->i] == '0')
-	{
-		s->flag.zero = 1;
+	if (str[s->i] == '0' && (s->flag.zero == 1))
 		s->i++;
-	}
-	if (str[s->i] == '-')
-	{
-		s->flag.minus = 1;
+	if (str[s->i] == '-' && (s->flag.minus ==1))
 		s->i++;
-	}
 	while (str[s->i] > 47 && str[s->i] < 58)
 	{
 		s->flag.width = s->flag.width * 10 + (str[s->i] - 48);
@@ -40,6 +34,10 @@ int	ft_flag_recon(t_struct *s, const char *str)
 			s->flag.width *= -1;
 		}
 	}
+	ft_flag_recon2(s, str);
+}
+void	ft_flag_recon2(t_struct *s, const char *str)
+{
 	if (str[s->i] == '.')
 	{
 		s->i++;
@@ -57,5 +55,4 @@ int	ft_flag_recon(t_struct *s, const char *str)
 			}
 		}
 	}
-	return (0);
 }

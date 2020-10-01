@@ -7,10 +7,10 @@ int		main(void)
 
 	ret = 0;
 	ret2 = 15;
-    ret = ft_printf("%.s", "hello");
+    ret = ft_printf("%3.0s", "hello");
     printf("\tret mio = %i\n", ret);
-    ret2 = printf("%.s", "hello");
-    // printf("\tret bueno = %i\n", ret2);
+    ret2 = printf("%3.0s", "hello");
+    printf("\tret bueno = %i\n", ret2);
     // ret = ft_printf("%.0s", "hello");
     // printf("\tret mio = %i\n", ret);
     // ret2 = printf("%.0s", "hello");

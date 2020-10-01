@@ -52,7 +52,6 @@ void	ft_put_str(t_struct *s)
 		str = "(null)";
 	len = ft_strlen(str);
 	width = s->flag.width;
-
 	width = 1 + width - len;
 	if (s->flag.minus == 1)
 	{
