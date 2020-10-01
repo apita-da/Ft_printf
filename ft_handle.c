@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/30 17:39:29 by apita-da          #+#    #+#             */
-/*   Updated: 2020/09/30 17:39:29 by apita-da         ###   ########.fr       */
+/*   Created: 2020/10/01 17:55:01 by apita-da          #+#    #+#             */
+/*   Updated: 2020/10/01 19:14:48 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+#include "libftprintf.h"
 
 void	ft_handle(t_struct *s, const char *str)
 {
@@ -23,15 +23,15 @@ void	ft_handle(t_struct *s, const char *str)
 		else
 			ft_put_str(s);
 	}
-	if (str[s->i] == 'd' || str[s->i] == 'i') 
+	if (str[s->i] == 'd' || str[s->i] == 'i')
 		ft_put_dig(s);
-	if (str[s->i] == 'u') 
+	if (str[s->i] == 'u')
 		ft_put_dig_u(s);
-	if (str[s->i] == 'x') 
+	if (str[s->i] == 'x')
 		ft_put_dig_x(s);
-	if (str[s->i] == 'X') 
-		ft_put_dig_X(s);
-	if (str[s->i] == 'p') 
+	if (str[s->i] == 'X')
+		ft_put_dig_x_mayus(s);
+	if (str[s->i] == 'p')
 		ft_put_pointer(s);
 	if (str[s->i] == '%')
 		ft_put_perc(s);

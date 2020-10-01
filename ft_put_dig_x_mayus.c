@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_dig.c                                       :+:      :+:    :+:   */
+/*   ft_put_dig_x_mayus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 20:46:42 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/01 22:45:55 by apita-da         ###   ########.fr       */
+/*   Created: 2020/10/01 19:14:19 by apita-da          #+#    #+#             */
+/*   Updated: 2020/10/01 19:14:20 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_put_dig_minus(t_struct *s)
+void	ft_put_dig_minus_x_mayus(t_struct *s)
 {
-	int	c;
-	int	width;
-	int	len;
+	unsigned long int	c;
+	int					width;
+	int					len;
 
-	c = va_arg(s->argv, int);
+	c = (unsigned int)va_arg(s->argv, unsigned int);
 	width = s->flag.width;
-	len = ft_count_num(c);
+	len = ft_count_hex(c);
 	if (s->flag.prec <= len && width <= len)
-		ft_putnbrbase(c, "0123456789", s);
+		ft_putnbrbase(c, "012345689ABCDEF", s);
 	else
 	{
 		width = 1 + width - len;
@@ -32,23 +32,23 @@ void	ft_put_dig_minus(t_struct *s)
 			s->flag.prec--;
 			width--;
 		}
-		ft_putnbrbase(c, "0123456789", s);
+		ft_putnbrbase(c, "0123456789ABCDEF", s);
 		while (--width > 0)
 			ft_putchar(' ', s);
 	}
 }
 
-void	ft_put_prec(t_struct *s)
+void	ft_put_prec_x_mayus(t_struct *s)
 {
-	int	c;
-	int	width;
-	int	len;
+	unsigned long int	c;
+	int					width;
+	int					len;
 
-	c = va_arg(s->argv, int);
+	c = (unsigned int)va_arg(s->argv, unsigned int);
 	width = s->flag.width;
-	len = ft_count_num(c);
+	len = ft_count_hex(c);
 	if (s->flag.prec <= len && width <= len)
-		ft_putnbrbase(c, "0123456789", s);
+		ft_putnbrbase(c, "0123456789ABCDEF", s);
 	else
 	{
 		width = 1 + width - s->flag.prec;
@@ -60,19 +60,19 @@ void	ft_put_prec(t_struct *s)
 			width--;
 			s->flag.prec--;
 		}
-		ft_putnbrbase(c, "0123456789", s);
+		ft_putnbrbase(c, "0123456789ABCDEF", s);
 	}
 }
 
-void	ft_put_zero(t_struct *s)
+void	ft_put_zero_x_mayus(t_struct *s)
 {
-	int	c;
-	int	width;
-	int	len;
+	unsigned long int	c;
+	int					width;
+	int					len;
 
-	c = va_arg(s->argv, int);
+	c = (unsigned int)va_arg(s->argv, unsigned int);
 	width = s->flag.width;
-	len = ft_count_num(c);
+	len = ft_count_hex(c);
 	width = 1 + width - len;
 	while (--width && width > 0)
 	{
@@ -81,15 +81,15 @@ void	ft_put_zero(t_struct *s)
 		else
 			ft_putchar(' ', s);
 	}
-	ft_putnbrbase(c, "0123456789", s);
+	ft_putnbrbase(c, "0123456789ABCDEF", s);
 }
 
-void	ft_put_dig(t_struct *s)
+void	ft_put_dig_x_mayus(t_struct *s)
 {
 	if (s->flag.minus == 1)
-		ft_put_dig_minus(s);
+		ft_put_dig_minus_x_mayus(s);
 	else if (!s->flag.zero && s->flag.prec != 0)
-		ft_put_prec(s);
+		ft_put_prec_x_mayus(s);
 	else
-		ft_put_zero(s);
+		ft_put_zero_x_mayus(s);
 }

@@ -6,11 +6,11 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 17:40:51 by apita-da          #+#    #+#             */
-/*   Updated: 2020/09/30 17:40:53 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/01 20:53:40 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+#include "libftprintf.h"
 
 char	ft_putnbrbase(long long n, char *base, t_struct *s)
 {
@@ -29,30 +29,30 @@ char	ft_putnbrbase(long long n, char *base, t_struct *s)
 
 int		ft_count_num(long int num)
 {
-    int i;
-    
-    i = 0;
+	int i;
+
+	i = 0;
 	if (num == 0)
 		i = 1;
-    while (num != 0)
-    {
-        num = num / 10;
-        i++;
-    }
-    return (i);
+	while (num != 0)
+	{
+		num = num / 10;
+		i++;
+	}
+	return (i);
 }
 
 int		ft_count_hex(long int num)
 {
-    int i;
-    
-    i = 0;
+	int i;
+
+	i = 0;
 	if (num == 0)
 		i = 1;
-    while (num > 0)
-    {
-        num = num / 16;
-        i++;
-    }
-    return (i);
+	while (num > 0)
+	{
+		num = num / 16;
+		i++;
+	}
+	return (i);
 }
