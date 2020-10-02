@@ -60,7 +60,10 @@ void	ft_flag_recon3(t_struct *s, const char *str)
 			s->flag.prec = va_arg(s->argv, int);
 			s->i++;
 			if (s->flag.prec < 0)
+			{
+				s->flag.minus = 1;
 				s->flag.prec *= -1;
+			}
 		}
 		else if (!(str[s->i] > 47 && str[s->i] < 58))
 			s->flag.prec = 0;
