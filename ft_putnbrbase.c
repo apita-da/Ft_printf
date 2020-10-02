@@ -30,8 +30,8 @@ int		ft_count_num(long int num)
 	i = 0;
 	if (num < 0)
 		i++;
-	if (num == 0)
-		i = 1;
+	 if (num == 0)
+	 	i = 1;
 	while (num != 0)
 	{
 		num = num / 10;

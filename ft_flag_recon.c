@@ -53,7 +53,7 @@ void	ft_flag_recon3(t_struct *s, const char *str)
 {
 	if (str[s->i] == '.')
 	{
-		s->flag.zero == 0;
+		s->flag.zero = 0;
 		s->i++;
 		if (str[s->i] == '*')
 		{

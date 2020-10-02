@@ -20,6 +20,8 @@ void	ft_put_dig(t_struct *s)
 
 	c = va_arg(s->argv, int);
 	len = ft_count_num(c);
+	if (c == 0 && s->flag.prec_zero == 1)
+		len = 0;
 	s->flag.prec = s->flag.prec + (c < 0 ? 1 : 0);
 	s->flag.width = s->flag.width - (len > s->flag.prec ? len : s->flag.prec);
 	s->flag.prec = s->flag.prec - len;
@@ -36,8 +38,6 @@ void	ft_put_dig(t_struct *s)
 		ft_putchar('0', s);
 	if (!(s->flag.prec_zero == 1 && c == 0))
 		ft_putnbrbase(c, "0123456789", s);
-	else  if (s->flag.width == 0 && c == 0)
-		ft_putchar(space, s);
 	while (s->flag.minus == 1 && s->flag.width-- > 0)
 		ft_putchar(space, s);
 }	
