@@ -12,8 +12,8 @@
 
 #include "libftprintf.h"
 
-void	ft_put_minus_p(t_struct *s)
-{
+// void	ft_put_minus_p(t_struct *s)
+// {
 // 	unsigned long int	c;
 // 	int					width;
 // 	int					len;
