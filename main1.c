@@ -5,9 +5,9 @@ int		main(void)
 	int ret;
     int ret2;
 
-    ret = ft_printf("%-5.i", 0);
+    ret = ft_printf("%.15x", -15);
     printf("\tret mio = %i\n", ret);
-    ret2 = printf("%-5.i", 0);
+    ret2 = printf("%.15x", -15);
     printf("\tret bueno = %i\n", ret2);
     // ret = ft_printf("%.0s", "hello");
     // printf("\tret mio = %i\n", ret);
