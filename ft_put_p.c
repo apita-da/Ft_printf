@@ -78,7 +78,9 @@ void	ft_put_pointer(t_struct *s)
 	char				space;
 
 	c = (long)va_arg(s->argv, void *);
-	len = ft_count_hex(c);
+	if (!c)
+		ft_putstr("0x", s);
+	len = ft_count_hex(c) + 2;
 	if (c == 0 && s->flag.prec_zero == 1)
 		len = 0;
 	s->flag.width = s->flag.width - (len > s->flag.prec ? len : s->flag.prec);
