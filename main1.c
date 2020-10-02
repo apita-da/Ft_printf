@@ -7,7 +7,7 @@ int		main(void)
 
     ret = ft_printf("%5.i", 0);
     printf("\tret mio = %i\n", ret);
-    ret2 = printf("%5.i", 0);
+    ret2 = printf("%0-5.i", 0);
     printf("\tret bueno = %i\n", ret2);
     // ret = ft_printf("%.0s", "hello");
     // printf("\tret mio = %i\n", ret);
