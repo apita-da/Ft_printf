@@ -5,17 +5,17 @@ int		main(void)
 	int ret;
     int ret2;
 
-    ret = 5;
-    ret = 20;
-    ret = ft_printf("%5.p", NULL);
-    printf("\tret mio = %i\n", ret);
-    ret2 = printf("%5p", &ret);
-    printf("\tret bueno = %i\n", ret2);
-    // ret = ft_printf("%.0s", "hello");
+    // ret = 1234569167;
+    // ret2 = 1234567169;
+    // ret = ft_printf("%16%16p%16p%16p",&ret,&ret2,&ret,&ret2);
     // printf("\tret mio = %i\n", ret);
-    // ret2 = printf("%.0s", "hello");
+    // ret2 = printf("%16p%16p%16p%16p",&ret,&ret2,&ret,&ret2);
     // printf("\tret bueno = %i\n", ret2);
-	// ret = ft_printf("%-15.10s", "123456");
+    ret = ft_printf("%i", 1001);
+    printf("\tret mio = %i\n", ret);
+    ret2 = printf("%i", 1001);
+    printf("\tret bueno = %i\n", ret2);
+	//ret = ft_printf("%-15.10s", "123456");
     // printf("\t ret mio = %i\n", ret);
     // ret2 = printf("%-15.10s", "123456");
     // printf("\t ret bueno = %i\n", ret2);
@@ -29,7 +29,7 @@ int		main(void)
 //     printf("Numero %i -> %i\n", n, ft_count_num(n));
 //     n = -3;
 //     printf("Numero %i -> %i\n", n, ft_count_num(n));
-//     n = 800;
+//     n = 1600;
 //     printf("Numero %i -> %i\n", n, ft_count_num(n));
 //     n = 1564564;
 //     printf("Numero %i -> %i\n", n, ft_count_num(n));

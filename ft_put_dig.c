@@ -39,5 +39,5 @@ void	ft_put_dig(t_struct *s)
 	if (!(s->flag.prec_zero == 1 && c == 0))
 		ft_putnbrbase(c, "0123456789", s);
 	while (s->flag.minus == 1 && s->flag.width-- > 0)
-		ft_putchar(space, s);
+		ft_putchar(space, s);	
 }	

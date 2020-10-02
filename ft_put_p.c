@@ -31,7 +31,7 @@ void	ft_put_minus_p(t_struct *s)
 	{
 		ft_putstr("0x", s);
 		ft_putnbrbase(c, "0123456789abcdef", s);
-		while (width--)
+		while (width-- > 0)
 		{
 			ft_putchar(' ', s);
 		}
@@ -55,7 +55,7 @@ void	ft_put_width_p(t_struct *s)
 	}
 	else
 	{
-		while (width--)
+		while (width-- > 0)
 		{
 			ft_putchar(' ', s);
 		}
