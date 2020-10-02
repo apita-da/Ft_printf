@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-void	ft_put_dig_x(t_struct *s)
+void	ft_put_dig_x_mayus(t_struct *s)
 {
 	unsigned long int	c;
 	int					len;
