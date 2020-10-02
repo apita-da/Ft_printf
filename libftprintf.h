@@ -59,9 +59,6 @@ void			ft_str(const char *str, t_struct *s);
 ** handle d & i
 */
 void			ft_put_dig(t_struct *s);
-void			ft_put_dig_minus(t_struct *s);
-void			ft_put_prec(t_struct *s);
-void			ft_put_zero(t_struct *s);
 /*
 ** handle u
 */
