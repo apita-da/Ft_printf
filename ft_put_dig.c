@@ -30,7 +30,7 @@ void	ft_put_dig(t_struct *s)
 		ft_putchar('-', s);
 	while (s->flag.minus == -1 && s->flag.width-- > 0)
 		ft_putchar(space, s);
-	if (c < 0 && s->flag.zero == -1)
+	if (c < 0 && s->flag.zero != 1)
 		ft_putchar('-', s);
 	while (s->flag.prec-- > 0)
 		ft_putchar('0', s);
