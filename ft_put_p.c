@@ -49,7 +49,7 @@ void	ft_put_width_p(t_struct *s)
 	{
 		if (s->flag.prec_zero == 1 && s->flag.width < 2)
 			s->flag.width = 2;
-		ft_putstr("0x", s);
+		ft_putstr("0x0", s);
 		return ;
 	}
 	width = s->flag.width;
