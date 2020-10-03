@@ -23,7 +23,7 @@ void	ft_put_str_prec(t_struct *s)
 		str = "(null)";
 	len = ft_strlen(str);
 	width = s->flag.width;
-	width = 1 + width - len;
+	width = 1 + width - (len > s->flag.prec ? s->flag.prec : len);
 	if (s->flag.minus == 1)
 	{
 		ft_putstr(str, s);
