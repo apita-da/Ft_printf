@@ -69,17 +69,10 @@ void	ft_put_pointer(t_struct *s)
 	unsigned long int	c;
 
 	c = (long)va_arg(s->argv, void *);
-	if (!(c && s->flag.prec))
-		ft_putstr("0x", s);
-	else if (!c && s->flag.width < 2)
+	if (!c && s->flag.width < 2)
 	{
 		if (s->flag.prec == 0 && s->flag.width < 2)
 			s->flag.width = 2;
-		ft_putstr("0x0", s);
-		return ;
-	}
-	else
-	{
 		ft_putstr("0x0", s);
 		return ;
 	}
