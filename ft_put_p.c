@@ -76,6 +76,13 @@ void	ft_put_pointer(t_struct *s)
 		ft_putstr("0x0", s);
 		return ;
 	}
+	else
+	{
+		ft_putstr("0x", s);
+		ft_putnbrbase(c, "0123456789abcdef", s);
+	}
+	if (s->flag.prec == 0 && s->flag.width < ft_count_hex(c))
+		s->flag.width = ft_count_hex(c);
 	if (s->flag.prec != 0)
 		s->flag.zero = 1;
 	if (s->flag.minus == 1)
