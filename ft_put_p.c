@@ -45,7 +45,7 @@ void	ft_put_width_p(t_struct *s)
 	int					len;
 
 	c = (long)va_arg(s->argv, void *);
-	if (!c && s->flag < 2)
+	if (!c && s->flag.width < 2)
 	{
 		if (s->flag.prec_zero == 1 && s->flag.width < 2)
 			s->flag.width = 2;
