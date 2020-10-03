@@ -88,20 +88,18 @@ void	ft_put_pointer(t_struct *s)
 		ft_putstr("0x0", s);
 		return ;
 	}
-	len = ft_count_hex(c);
-	if (c == 0 && s->flag.prec_zero == 1)
-		len = 0;
+	len = ft_count_hex(c) + 2;
 	s->flag.width = s->flag.width - (len > s->flag.prec ? len : s->flag.prec);
 	s->flag.prec = s->flag.prec - len;
 	space = ' ';
 	if (s->flag.zero == 1)
 		space = '0';
-	while (s->flag.minus == -1 && s->flag.width-- > 0)
+	while (s->flag.minus == -1 && s->flag.width-- > 2)
 		ft_putchar(space, s);
-	while (s->flag.prec-- > 0)
+	while (s->flag.prec-- > 2)
 		ft_putchar('0', s);
 	ft_putstr("0x", s);
 	ft_putnbrbase(c, "0123456789abcdef", s);
-	while (s->flag.minus == 1 && s->flag.width-- > 0)
+	while (s->flag.minus == 1 && s->flag.width-- > 2)
 		ft_putchar(space, s);
 }
