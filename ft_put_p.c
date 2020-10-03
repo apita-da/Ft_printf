@@ -45,6 +45,13 @@ void	ft_put_width_p(t_struct *s)
 	int					len;
 
 	c = (long)va_arg(s->argv, void *);
+	if (!c && s->flag < 2)
+	{
+		if (s->flag.prec_zero == 1 && s->flag.width < 2)
+			s->flag.width = 2;
+		ft_putstr("0x", s);
+		return ;
+	}
 	width = s->flag.width;
 	len = ft_count_hex(c);
 	width = width - (len + 2);
