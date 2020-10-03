@@ -88,7 +88,7 @@ void	ft_put_pointer(t_struct *s)
 	while (s->flag.minus == -1 && s->flag.width-- > 0)
 		ft_putchar(space, s);
 	ft_putstr("0x", s);
-	while (s->flag.prec -- > 0)
+	while (s->flag.prec -- > 0 && c != 0)
 		ft_putchar('0', s);
 	ft_putnbrbase(c, "0123456789abcdef", s);
 	while (s->flag.minus == 1 && s->flag.width-- > 0)

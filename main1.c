@@ -2,17 +2,18 @@
 
 int		main(void)
 {
-	int ret, ret2;
+	int ret;
+    int ret2;
 
-
-    /*
-    ret = ft_printf("%16p%16p%16p%16p",&ret,&ret2,&ret,&ret2);
+    // ret = 1234569167;
+    // ret2 = 1234567169;
+    // ret = ft_printf("%16%16p%16p%16p",&ret,&ret2,&ret,&ret2);
+    // printf("\tret mio = %i\n", ret);
+    // ret2 = printf("%16p%16p%16p%16p",&ret,&ret2,&ret,&ret2);
+    // printf("\tret bueno = %i\n", ret2);
+    ret = ft_printf("%.*s", -3, "yolo");
     printf("\tret mio = %i\n", ret);
-    ret2 = printf("%16p%16p%16p%16p",&ret,&ret2,&ret,&ret2);
-    printf("\tret bueno = %i\n", ret2);*/
-    ret = ft_printf("%5");
-    printf("\tret mio = %i\n", ret);
-    ret2 = printf("%i", 1514);
+    ret2 = printf("%.*s",-3, "yolo");
     printf("\tret bueno = %i\n", ret2);
 	//ret = ft_printf("%-15.10s", "123456");
     // printf("\t ret mio = %i\n", ret);
