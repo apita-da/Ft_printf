@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:47:05 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/01 22:30:29 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/03 19:23:23 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ void	ft_putstr(const char *str, t_struct *s)
 	int	i;
 
 	i = -1;
+	/*if (s->flag.prec < 0)
+	{
+		s->flag.prec *= -1;
+		while (str[++i] != '\0')
+		{
+			ft_putchar(str[i], s);
+			s->flag.prec--;
+		}
+	}*/	
 	if (s->flag.prec > 0)
 	{
 		while (str[++i] != '\0' && s->flag.prec != 0)

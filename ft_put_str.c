@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:46:55 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/01 22:35:34 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/03 20:06:55 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	ft_put_str_prec(t_struct *s)
 	int				len;
 	const char		*str;
 	int				width;
-	int				prec;
 
 	str = va_arg(s->argv, const char *);
 	if (str == NULL)
 		str = "(null)";
 	len = ft_strlen(str);
 	width = s->flag.width;
-	prec = s->flag.prec;
-	width = 1 + width - (len > prec ? prec : len);
+	if (s->flag.prec < 0 && s->flag.prec < len)
+			s->flag.prec = len;
+	width = 1 + width - (len > s->flag.prec ? s->flag.prec : len);
 	if (s->flag.minus == 1)
 	{
 		ft_putstr(str, s);

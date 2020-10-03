@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:46:42 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/01 22:45:55 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/03 18:24:45 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_put_dig(t_struct *s)
 
 	c = va_arg(s->argv, int);
 	len = ft_count_num(c);
-	if (c == 0 && s->flag.prec_zero == 1)
+	if (s->flag.prec_zero == 1 && c == 0)
 		len = 0;
 	s->flag.prec = s->flag.prec + (c < 0 ? 1 : 0);
 	s->flag.width = s->flag.width - (len > s->flag.prec ? len : s->flag.prec);

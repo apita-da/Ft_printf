@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 19:48:18 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/01 22:47:43 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/03 18:23:33 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			ft_put_width_p(t_struct *s);
 void			ft_put_perc(t_struct *s);
 void			ft_putchar(char c, t_struct *s);
 int				ft_strlen(const char *str);
-int				ft_count_num(long int num);
+int				ft_count_num(int num);
 int				ft_count_hex(long int num);
 char			ft_putnbrbase(long long n, char *base, t_struct *s);
 #endif
