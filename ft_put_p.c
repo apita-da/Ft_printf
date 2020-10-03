@@ -45,13 +45,6 @@ void	ft_put_width_p(t_struct *s)
 	int					len;
 
 	c = (long)va_arg(s->argv, void *);
-	if (!c && s->flag.width < 2)
-	{
-		if (s->flag.prec_zero == 1 && s->flag.width < 2)
-			s->flag.width = 2;
-		ft_putstr("0x0", s);
-		return ;
-	}
 	width = s->flag.width;
 	len = ft_count_hex(c);
 	width = width - (len + 2);
@@ -107,11 +100,8 @@ void	ft_put_pointer(t_struct *s)
 		ft_putchar(space, s);
 	while (s->flag.prec-- > 0)
 		ft_putchar('0', s);
-	if (!(s->flag.prec_zero == 1 && c == 0))
-		{
-			ft_putstr("0x", s);
-			ft_putnbrbase(c, "0123456789abcdef", s);
-		}
+	ft_putstr("0x", s);
+	ft_putnbrbase(c, "0123456789abcdef", s);
 	while (s->flag.minus == 1 && s->flag.width-- > 0)
 		ft_putchar(space, s);
 }
