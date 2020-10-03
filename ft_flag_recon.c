@@ -51,7 +51,6 @@ void	ft_flag_recon2(t_struct *s, const char *str)
 
 void	ft_flag_recon3(t_struct *s, const char *str)
 {
-	s->flag.zero = 0;
 	if (str[s->i] == '.')
 	{
 		s->flag.zero = 0;
