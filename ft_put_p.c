@@ -88,6 +88,13 @@ void	ft_put_pointer(t_struct *s)
 	char				space;
 
 	c = (unsigned int)va_arg(s->argv, unsigned int);
+	if (!c && s->flag.width < 2)
+	{
+		if (s->flag.prec_zero == 1 && s->flag.width < 2)
+			s->flag.width = 2;
+		ft_putstr("0x0", s);
+		return ;
+	}
 	len = ft_count_hex(c);
 	if (c == 0 && s->flag.prec_zero == 1)
 		len = 0;
