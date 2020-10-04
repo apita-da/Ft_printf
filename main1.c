@@ -11,7 +11,7 @@ int		main(void)
     // printf("\tret mio = %i\n", ret);
     // ret2 = printf("%16p%16p%16p%16p",&ret,&ret2,&ret,&ret2);
     // printf("\tret bueno = %i\n", ret2);
-    ret = ft_printf("%i", 0);
+    ret = ft_printf("%2.9p", 1234);
     printf("\tret mio = %i\n", ret);
     ret2 = printf("%i", 0);
     printf("\tret bueno = %i\n", ret2);
