@@ -17,8 +17,10 @@ void	ft_put_pointer(t_struct *s)
 	unsigned long int	c;
 	int					len;
 	char				space;
+	int					prec.zero;
 
 	c = (unsigned long)va_arg(s->argv, unsigned long);
+	prec.zero = s->flag.prec_zero;
 	if (!c && s->flag.width <= 2)
 	{
 		if (s->flag.prec_zero == 1 && s->flag.width <= 2)
@@ -27,6 +29,12 @@ void	ft_put_pointer(t_struct *s)
 	}
 	else if (!c && s->flag.prec_zero == 1)
 		ft_putstr("0x", s);
+	else if (!c &&  s->flag.prec_zero == 1)
+	{
+		while (s->flag.width-- > 0)
+			ft_putchar(' ', s);
+		ft_putstr("0x", s);
+	}
 	else
 	{
 		len = ft_count_hex(c) + 2;
