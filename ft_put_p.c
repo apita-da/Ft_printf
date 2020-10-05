@@ -25,6 +25,8 @@ void	ft_put_pointer(t_struct *s)
 			s->flag.width = 2;
 		ft_putstr("0x0", s);
 	}
+	if (!(c && s->flag.prec))
+		ft_putstr("0x", s);
 	else
 	{
 		len = ft_count_hex(c) + 2;
@@ -35,8 +37,6 @@ void	ft_put_pointer(t_struct *s)
 			space = '0';
 		while (s->flag.minus == -1 && s->flag.width-- > 0)
 			ft_putchar(space, s);
-		if ((!s->flag.prec && !c) || (s->flag.prec_zero == 1 && c == 0))
-			ft_putstr("0x", s);
 		ft_putstr("0x", s);
 		while ((s->flag.prec-- > 0) || (s->flag.prec > s->flag.width))
 			ft_putchar('0', s);
