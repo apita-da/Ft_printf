@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libftprintf.a
+
 SRCS =	ft_printf.c ft_handle.c\
 		ft_put_c.c ft_put_str.c ft_putstr.c ft_put_dig.c\
 		ft_putnbrbase.c ft_iniflags.c ft_flag_recon.c\
@@ -18,19 +20,19 @@ SRCS =	ft_printf.c ft_handle.c\
 		
 OBJS = $(SRCS:.c=.o)
 
+CFLAGS = -Wall -Wextra -Werror
 
-CFLAGS = -Wall -Wextra -Werror -g
-ARFLAGS = -crs
-all: install
+all:  
+	gcc -c $(FLAGS) $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
-install: 
-		gcc $(CFLAGS) main1.c $(SRCS)
-libreria:
-		gcc $(CFLAGS) -c $(SRCS)
-		ar $(ARFLAGS) libftprintf.a $(OBJS)
-		ranlib libftprintf.a
 clean:
-		rm $(OBJS)
+	rm -f $(OBJS)
+
 fclean: clean
-		rm libftprintf.a
-re: clean fclean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

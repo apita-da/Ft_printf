@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 17:55:01 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/03 21:51:02 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/05 19:01:11 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void	ft_handle(t_struct *s, const char *str)
 		ft_put_pointer(s);
 	if (str[s->i] == '%')
 		ft_put_perc(s);
+	else
+		return ;
 }

@@ -6,11 +6,22 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 17:39:22 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/03 19:19:18 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/05 20:59:58 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+static void	recon3prec(t_struct *s)
+{
+	s->flag.prec = va_arg(s->argv, int);
+	s->i++;
+	if (s->flag.prec < 0 && s->flag.width != 0)
+	{
+		s->flag.zero = 0;
+		s->flag.prec = s->flag.width;
+	}
+}
 
 void	ft_flag_recon(t_struct *s, const char *str)
 {
@@ -57,15 +68,7 @@ void	ft_flag_recon3(t_struct *s, const char *str)
 		s->flag.zero = 0;
 		s->i++;
 		if (str[s->i] == '*')
-		{
-			s->flag.prec = va_arg(s->argv, int);
-			s->i++;
-			if (s->flag.prec < 0 && s->flag.width != 0)
-			{
-				s->flag.zero = 0;
-				s->flag.prec = s->flag.width;
-			}
-		}
+			recon3prec(s);
 		else if (!(str[s->i] > 47 && str[s->i] < 58))
 			s->flag.prec = 0;
 		else

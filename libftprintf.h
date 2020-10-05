@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 19:48:18 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/03 18:23:33 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/05 21:04:08 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,29 +63,22 @@ void			ft_put_dig(t_struct *s);
 ** handle u
 */
 void			ft_put_dig_u(t_struct *s);
-void			ft_put_dig_minus_u(t_struct *s);
-void			ft_put_prec_u(t_struct *s);
-void			ft_put_zero_u(t_struct *s);
 /*
 ** handle x
 */
 void			ft_put_dig_x(t_struct *s);
-void			ft_put_dig_minus_x(t_struct *s);
-void			ft_put_prec_x(t_struct *s);
-void			ft_put_zero_x(t_struct *s);
 /*
 ** handle X
 */
 void			ft_put_dig_x_mayus(t_struct *s);
-void			ft_put_dig_minus_x_mayus(t_struct *s);
-void			ft_put_prec_x_mayus(t_struct *s);
-void			ft_put_zero_x_mayus(t_struct *s);
+
 /*
 **handle puntero
 */
 void			ft_put_pointer(t_struct *s);
-void			ft_put_minus_p(t_struct *s);
-void			ft_put_width_p(t_struct *s);
+void			ft_p_zero(t_struct *s);
+void			ft_p_nullwidth(t_struct *s);
+void			ft_p_nullprec(t_struct *s);
 /*
 **porcentaje
 */
