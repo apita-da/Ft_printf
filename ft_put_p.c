@@ -35,7 +35,7 @@ void	ft_put_pointer(t_struct *s)
 			space = '0';
 		while (s->flag.minus == -1 && s->flag.width-- > 0)
 			ft_putchar(space, s);
-		if ((s->flag.prec_zero == 1) || (s->flag.prec_zero == 1 && c == 0))
+		if ((!s->flag.prec && !c) || (s->flag.prec_zero == 1 && c == 0))
 			ft_putstr("0x", s);
 		ft_putstr("0x", s);
 		while ((s->flag.prec-- > 0) || (s->flag.prec > s->flag.width))
