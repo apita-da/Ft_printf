@@ -6,7 +6,7 @@
 /*   By: apita-da <apita-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 19:31:13 by apita-da          #+#    #+#             */
-/*   Updated: 2020/10/03 21:42:04 by apita-da         ###   ########.fr       */
+/*   Updated: 2020/10/05 12:38:17 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@ void	ft_put_pointer(t_struct *s)
 		ft_putstr("0x0", s);
 		
 	}
-	else if (!c && s->flag.width >= 2)
-	{
-		if (s->flag.prec_zero == 1 && s->flag.width-- >= 2)
-			ft_putchar(' ', s);
-		ft_putstr("0x", s);
-	}
-	else if (!c && s->flag.prec_zero == 1)
-		ft_putstr("0x", s);
 	else
 	{
 		len = ft_count_hex(c) + 2;
