@@ -24,10 +24,16 @@ void	ft_put_pointer(t_struct *s)
 		if (s->flag.prec_zero == 1 && s->flag.width < 2)
 			s->flag.width = 2;
 		ft_putstr("0x0", s);
+		
+	}
+	else if (!c && s->flag.width >= 2)
+	{
 		if (s->flag.prec_zero == 1 && s->flag.width-- >= 2)
 			ft_putchar(' ', s);
 		ft_putstr("0x", s);
 	}
+	else if (!c && s->flag.prec_zero == 1)
+		ft_putstr("0x", s);
 	else
 	{
 		len = ft_count_hex(c) + 2;
