@@ -25,7 +25,7 @@ void	ft_put_pointer(t_struct *s)
 			s->flag.width = 2;
 		ft_putstr("0x0", s);
 	}
-	if (!(c && s->flag.prec))
+	else if (!(c && s->flag.prec))
 		ft_putstr("0x", s);
 	else
 	{
