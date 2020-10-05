@@ -24,7 +24,6 @@ void	ft_put_pointer(t_struct *s)
 		if (s->flag.prec_zero == 1 && s->flag.width <= 2)
 			s->flag.width = 2;
 		ft_putstr("0x0", s);
-		
 	}
 	else
 	{
@@ -36,7 +35,8 @@ void	ft_put_pointer(t_struct *s)
 			space = '0';
 		while (s->flag.minus == -1 && s->flag.width-- > 0)
 			ft_putchar(space, s);
-		ft_putstr("0x", s);
+		if (!(s->flag.prec_zero == 1 && c == 0))
+			ft_putstr("0x", s);
 		while ((s->flag.prec-- > 0) || (s->flag.prec > s->flag.width))
 			ft_putchar('0', s);
 		ft_putnbrbase(c, "0123456789abcdef", s);
